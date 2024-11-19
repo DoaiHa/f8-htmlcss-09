@@ -1,0 +1,16 @@
+
+.messenger{
+    width: 100%;
+    border-radius: 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding: 16px 20px;
+
+
+    &--success{
+        background: rgb(4 241 35 / 20%);
+        border: 1.5px solid #0fd51b;
+    }
+    
+}

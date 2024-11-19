@@ -1,0 +1,165 @@
+@use "../abstracts";
+
+.auth{
+    min-height: 100vh;
+    display: flex;
+
+    &__intro, &__content{
+        flex: 1;
+        padding: 0 30px;
+    }
+
+    &__intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        background: var(--intro-bg-color);
+
+        position: relative;
+
+        &-logo{
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            translate: -50%;
+
+            @include abstracts.breakpoints(sm){
+                top: 30px;
+            }
+        }
+
+        &--next{
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            translate: -50%;
+        }
+
+        &__img{
+            width: 100%;
+        }
+
+        &--text{
+            text-align: center;
+            max-width: 412px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144%; /* 144.444% */
+
+                @include abstracts.breakpoints(md){
+                    margin-bottom: 100px;
+                }
+        }
+        &--img{
+            width: 370px;
+            height: 261px;
+            object-fit: contain;
+            width: var(--intro--img);
+
+            @include abstracts.breakpoints(md){
+                width: 300px;
+                margin-top: 50px;
+            }
+        }
+    }
+    &__content {
+        background: var(--auth-content-bg);
+        
+
+        @include abstracts.breakpoints(md){
+
+            &.hide{
+                translate: 100%;
+            }
+
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            transition: translate 0.3s ;
+            overflow-y: auto;
+        }
+
+        
+
+
+        &--inner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+
+            width: min(460px , 100%);
+            margin: 0 auto;
+            padding: 50px 0;
+
+        @include abstracts.breakpoints(md){
+            padding-top: 30px;
+        }
+        }
+    }
+    &__heading{
+        margin-top: 50px;
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 146%; /* 146.667% */
+        color: var(--auth-heading-color);
+    }
+    &__desc{
+        color: #9E9DA8;
+        margin-top: 10px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146%; /* 146.667% */
+        max-width: 460px;
+        padding: 0 20px;
+    }
+    &__form{
+        width: 100%;
+        margin-top: 30px;
+
+        
+        &--forgot{
+            margin-top: 10px;
+        }
+
+    }
+    &__link{
+        color:  #0071DC;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146%; /* 146.667% */
+    }
+    &__btn--group{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+    }
+
+    &__btn{
+        width: 100%;
+    }
+
+    &__text{
+        margin-top: 108px;
+        color: #9E9DA8;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 144%; /* 144.444% */
+
+        @include abstracts.breakpoints(md){
+            margin-top: 50px;
+        }
+    }
+
+    &--messenger{
+        margin-top: 20px;
+    }
+
+
+
+}

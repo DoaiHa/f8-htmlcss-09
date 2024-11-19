@@ -1,0 +1,95 @@
+@use "../abstracts";
+
+
+
+.footer{
+    margin: 100px 20px;
+    background: var(--body-bg);
+
+    @include abstracts.breakpoints(sm){
+        margin: 20px;
+    }
+
+    &__row{
+        padding-bottom: 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+        border-bottom: 1px solid var(--boder--footer-color);
+
+        @include abstracts.breakpoints(lg){
+            grid-template-columns:  1fr 1fr;
+            padding-left: 10%;
+        }
+
+        @include abstracts.breakpoints(md){
+            padding-left: 0;
+        }
+
+        @include abstracts.breakpoints(sm){
+            display: none;        
+        }
+
+
+    }
+    &__heading{
+        width: max-content;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 120%;
+        color: var(--footer-color-heading);
+        margin-bottom: 10px;
+    }
+    &__label{
+        color: var(--doai);
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 100%;
+    }
+
+    &__label,
+    &__link{
+        margin-top: 12px;
+
+        @include abstracts.breakpoints(lg){
+            padding-top: 0px;
+        }
+
+    }
+    &__link
+    {
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 150%;
+        color: var(--footer-desc--color);
+        display: inline-block;
+        width: max-content;
+    }
+
+    &__contact{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: max-content;
+    }
+    
+}
+.footer__copyright{
+    display: block;
+    text-align: center;
+    &__desc{
+        margin: 20px auto 15px auto;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 150%;
+    }
+    &__name{
+        font-size: 1rem;
+    }
+
+    @include abstracts.breakpoints(sm){
+        border-top: 1px solid var(--boder--footer-color);
+        margin: 10px auto;
+    }
+
+}

@@ -1,0 +1,321 @@
+@use "../abstracts";
+
+.product-page{
+    min-height: 80vh;
+    background: var(--product-detail-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.product__container{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    @include abstracts.breakpoints(md){
+        margin-top: 20px;
+    }
+}
+
+.product__info--container{
+    background: var(--product-container-bg);
+    border-radius: 20px;
+}
+
+.prod-preview{
+
+    @include abstracts.breakpoints(lg){
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    @include abstracts.breakpoints(md){
+        padding: 16px;
+    }
+    &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+    &__list{
+        display: flex;
+        overflow: hidden;
+        @include abstracts.breakpoints(lg){
+             flex : 1;
+        }
+
+    }
+    &__item{
+        width: 100%;
+        flex-shrink: 0;
+        padding-top: 92%;
+        position: relative;
+
+    }
+    &__thumb{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        gap: 20px;
+
+        @include abstracts.breakpoints(lg){
+            flex-direction: column;
+            padding-left: 0;
+       }
+       @include abstracts.breakpoints(md){
+            display: none;
+   }
+       
+
+        
+
+    }
+
+    &__thumb-img{
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+        border: 1.5px solid rgb(212, 203, 203, 0.3);
+        border-radius: 18px;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity, border-color ;
+        transition-duration: 0.3s;
+
+        &:hover{
+            opacity: 1;
+            border-color:  #0000004d;
+
+        }
+
+        &-current{
+            opacity: 1;
+            border-color: rgb(225, 196, 101);
+
+        }
+        
+    }
+}
+
+.prod-info{
+    padding: 60px;
+    background: var(--beadcrumbs-bg);
+
+    @include abstracts.breakpoints(xxl) {
+        padding: 40px;
+     }
+
+     @include abstracts.breakpoints(lg) {
+        margin-top: 30px;
+     }
+     @include abstracts.breakpoints(md) {
+        background: var(--prod-info-bg);
+        padding: 0 16px 16px 16px;
+     }
+
+
+    &__heading{
+        font-size: 2.6rem;
+        font-weight: 500;
+        line-height: 138%;
+    }
+    &__label{
+        margin-top: 30px;
+    }
+
+    &__card{
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid var(--prod-info-border-color);
+        
+    }
+    &__row{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__tax{
+        padding: 0px 8px ;
+        background: var(--prod-info-tax);
+        color: #67B044;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142%; /* 142.857% */
+        border-radius: 2px;
+    }
+
+    &__price
+    ,&__total-price{
+        color: #000;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%; /* 150% */
+    }
+    &__total-price{
+        margin: 20px 0;
+        font-size: 2.6rem; 
+    }
+
+    &__add-to-card{
+        flex: 1;
+        margin-right: 20px;
+        color: var(--prod-info__add-to-card);
+        @include abstracts.breakpoints(xxl) {
+            margin-right: 0px;
+         }
+
+         @include abstracts.breakpoints(lg) {
+            margin-right: 50px;
+         }
+
+        
+        @include abstracts.breakpoints(sm) {
+            font-size: 1.3rem;
+            margin: 10px;
+         }
+    }
+    &__like-btn{
+        width: 46px;
+        height: 46px;
+        border-radius: 6px;
+        border: 1px solid  var(--prod-info-border-color);
+    }
+    &__tag{
+        background: var(--prod-info-tags);
+    }
+
+    
+}
+
+.prod-props{
+    padding-left: 30px;
+
+    @include abstracts.breakpoints(xxl) {
+        padding-left: 10px;
+     }
+
+     @include abstracts.breakpoints(lg) {
+        padding-left: 0px;
+     }
+}
+
+.prod-prop{
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+
+    @include abstracts.breakpoints(md) {
+        margin-top: 20px;
+    }
+
+    &__inner{
+        @include abstracts.breakpoints(xl){
+            display: flex;
+            gap: 5px
+        }
+        @include abstracts.breakpoints(lg){
+            display: flex;
+            gap: 20px;
+        }
+    @include abstracts.breakpoints(sm){
+        display: block;
+    }
+    }
+
+    &__title{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144%; /* 144.444% */
+    }
+
+    &__icon{
+        align-self: flex-start;
+    }
+
+    &__desc{
+        margin-top: 4px;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 142.857%;
+    }
+    
+}
+
+
+.prod-tab{
+
+    &__lists{
+        display: flex;
+        align-items: center;
+        margin: 0 -30px;
+
+        @include abstracts.breakpoints(md) {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+    }
+
+    &__item{
+        padding: 0 30px;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145%; 
+        color: var(--prod-info-border-color);
+
+        @include abstracts.breakpoints(lg) {
+            font-size: 1.9rem;
+            padding: 8px 30px;
+        }
+        @include abstracts.breakpoints(sm) {
+            font-size: 1.1rem;
+            padding: 4px 10px;
+        }
+
+
+
+        user-select: none;
+
+        &:not(&--current){
+            cursor: pointer;
+        }
+
+
+
+        &--current{
+            color: inherit;
+        }
+    }
+
+    &__contents{
+        padding-top: 30px;
+    }
+    &__content{
+        display: none;
+
+        &--current{
+            display: block;
+        }
+    }
+}
+
+.prod-content{
+
+    &__heading{
+        margin-bottom: 30px;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 141.667%;
+    }
+}

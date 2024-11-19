@@ -1,0 +1,44 @@
+@use "../abstracts";
+
+
+.beadcrumbs{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 20px;
+
+    min-height: 64px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    background: var(--beadcrumbs-bg);
+    box-shadow: 0px 20px 60px 10px var(--beadcrumbs-bg-shadow);
+
+    @include abstracts.breakpoints(md) {
+        gap: 16px;
+        border-radius: 20px;
+    }
+    &__link{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%; 
+        color: #9E9DA8;
+
+        white-space: nowrap;
+
+        @include abstracts.breakpoints(md) {
+            font-size: 1.4rem;
+    
+        }
+
+        &--current{
+            color: inherit;
+        }
+
+        
+    }
+}

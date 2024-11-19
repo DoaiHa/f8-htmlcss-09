@@ -1,10 +1,61 @@
+@use "../abstracts";
+
 *, ::after, ::before{
     box-sizing: border-box;
 }
+
+*{
+    --webkit-tap-highlight-color: transparent;
+}
+
 html{
     font-size: 62.5%;
 }
 body{
     font-size: 1.6rem;
     font-family: Gordita , sans-serif;
+    color: var(--text-color);
+    background: var(--body-bg);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Gordita", sans-serif;
+}
+textarea, input, select, button, a, img{
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    padding: 0;
+}
+input{
+    background: transparent;
+}
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+.icon{
+    filter: var(--icon-color);
+}
+.iconn{
+    filter: var(--icon-colorr);
+
+}
+.container{
+    @include abstracts.breakpoints(sm){
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+.separate{
+    margin: var(--margin) 0 ;
+    height: 1px;
+    background: #ccc;
 }
